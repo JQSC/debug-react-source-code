@@ -13,4 +13,9 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<FnComp />, document.getElementById('root'));
+// ReactDOM.render(<FnComp />, document.getElementById('root'));
+
+
+ReactDOM.unstable_createRoot(
+    document.getElementById('root')
+).render(<FnComp />);

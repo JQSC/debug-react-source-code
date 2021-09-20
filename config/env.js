@@ -82,6 +82,7 @@ function getClientEnvironment(publicUrl) {
     __DEV__: true,
     __PROFILE__: true,
     __UMD__: true,
+    __EXPERIMENTAL__: true,
     'process.env': Object.keys(raw).reduce((env, key) => {
       env[key] = JSON.stringify(raw[key])
       return env

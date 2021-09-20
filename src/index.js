@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component ,createElement} from 'react';
+import { render, createRoot } from 'react-dom';
 import FnComp from './demo/FnComp'
 
-class App extends React.Component {
+class App extends Component {
 
     render() {
         return (
@@ -13,9 +13,9 @@ class App extends React.Component {
     }
 }
 
-// ReactDOM.render(<FnComp />, document.getElementById('root'));
+//render(<FnComp />, document.getElementById('root'));
 
 
-ReactDOM.unstable_createRoot(
+createRoot(
     document.getElementById('root')
 ).render(<FnComp />);

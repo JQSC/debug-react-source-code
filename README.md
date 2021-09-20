@@ -1,7 +1,7 @@
 # 仓库
 
 ```bash
-git clone https://github.com/JQSC/react-source-code.git
+git clone https://github.com/JQSC/debug-react-source-code.git
 ```
 
 ## install
@@ -13,7 +13,7 @@ yarn
 ## 当前源码版本
 
 ```bash
-react v16.8
+react v17.0.2
 ```
 
 ## 配置 vscode

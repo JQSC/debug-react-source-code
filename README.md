@@ -1,7 +1,7 @@
 # 仓库
 
 ```bash
-git clone https://gitee.com/frontend-qin/react-source-code.git
+git clone https://github.com/JQSC/react-source-code.git
 ```
 
 ## install

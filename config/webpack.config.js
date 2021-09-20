@@ -297,6 +297,7 @@ module.exports = function (webpackEnv) {
                 react: path.resolve(__dirname, '../src/react/packages/react'),
                 'react-dom': path.resolve(__dirname, '../src/react/packages/react-dom'),
                 shared: path.resolve(__dirname, '../src/react/packages/shared'),
+                scheduler: path.resolve(__dirname, '../src/react/packages/scheduler'),
                 // 'react-events': path.resolve(__dirname, '../src/react/packages/events'),
                 'react-reconciler': path.resolve(
                     __dirname,

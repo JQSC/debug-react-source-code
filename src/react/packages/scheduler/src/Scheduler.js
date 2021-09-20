@@ -397,6 +397,7 @@ function unstable_getCurrentPriorityLevel() {
 }
 
 const unstable_requestPaint = requestPaint;
+const unstable_flushAllWithoutAsserting = undefined
 
 export {
   ImmediatePriority as unstable_ImmediatePriority,
@@ -417,6 +418,7 @@ export {
   unstable_getFirstCallbackNode,
   getCurrentTime as unstable_now,
   forceFrameRate as unstable_forceFrameRate,
+  unstable_flushAllWithoutAsserting
 };
 
 export const unstable_Profiling = enableProfiling

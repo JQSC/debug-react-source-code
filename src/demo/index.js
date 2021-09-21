@@ -13,9 +13,9 @@ class App extends Component {
     }
 }
 
-//render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
 
 
-createRoot(
-    document.getElementById('root')
-).render(<App />);
+// createRoot(
+//     document.getElementById('root')
+// ).render(<App />);

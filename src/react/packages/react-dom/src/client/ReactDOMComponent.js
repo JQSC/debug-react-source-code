@@ -702,12 +702,13 @@ export function diffProperties(
       }
       break;
   }
-
+  //判断新属性，比如 style 是否正确赋值
   assertValidProps(tag, nextProps);
 
   let propKey;
   let styleName;
   let styleUpdates = null;
+  //遍历老props查找是否存在被删除的props，将删除的props加入到数组中
   for (propKey in lastProps) {
     if (
       nextProps.hasOwnProperty(propKey) ||
@@ -748,9 +749,11 @@ export function diffProperties(
       (updatePayload = updatePayload || []).push(propKey, null);
     }
   }
+  //遍历新props
   for (propKey in nextProps) {
     const nextProp = nextProps[propKey];
     const lastProp = lastProps != null ? lastProps[propKey] : undefined;
+    //新 props有老props中的属性 并且新老 props 不为 null 且不相等
     if (
       !nextProps.hasOwnProperty(propKey) ||
       nextProp === lastProp ||

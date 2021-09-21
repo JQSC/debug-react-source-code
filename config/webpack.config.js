@@ -294,14 +294,13 @@ module.exports = function (webpackEnv) {
                 // Support React Native Web
                 // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
                 'react-native': 'react-native-web',
-                react: path.resolve(__dirname, '../src/react/packages/react'),
-                'react-dom': path.resolve(__dirname, '../src/react/packages/react-dom'),
-                shared: path.resolve(__dirname, '../src/react/packages/shared'),
-                scheduler: path.resolve(__dirname, '../src/react/packages/scheduler'),
-                // 'react-events': path.resolve(__dirname, '../src/react/packages/events'),
+                react: path.resolve(__dirname, '../src/packages/react'),
+                'react-dom': path.resolve(__dirname, '../src/packages/react-dom'),
+                shared: path.resolve(__dirname, '../src/packages/shared'),
+                scheduler: path.resolve(__dirname, '../src/packages/scheduler'),
                 'react-reconciler': path.resolve(
                     __dirname,
-                    '../src/react/packages/react-reconciler',
+                    '../src/packages/react-reconciler',
                 ),
 
                 // Allows for better profiling with ReactDevTools

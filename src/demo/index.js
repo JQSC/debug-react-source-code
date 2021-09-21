@@ -7,15 +7,15 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ClassComp />
+                <FnComp />
             </div>
         );
     }
 }
 
-render(<App />, document.getElementById('root'));
+//render(<App />, document.getElementById('root'));
 
 
-// createRoot(
-//     document.getElementById('root')
-// ).render(<App />);
+createRoot(
+    document.getElementById('root')
+).render(<App />);

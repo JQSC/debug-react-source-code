@@ -1,7 +1,55 @@
-import React, { Component ,createRef} from 'react'
+import React, { Component, createRef, useRef, useState } from 'react'
 import './index.css'
 
-class HighestPriority extends Component {
+
+/*
+先执行+1，中途有高优先级任务+2进入，优先执行+2，在执行+1
+所以最后counter的表现为 0——>2——>3,而不是0——>1——>3
+*/
+function HighestPriority(props) {
+
+    const [counter, setCounter] = useState(0);
+
+    const buttonRef = useRef();
+
+    const handleButtonClick = () => {
+        setCounter((prevCounter) => {
+            return prevCounter + 2
+        })
+    }
+
+    const onBeginTask = () => {
+        const button = buttonRef.current
+        setTimeout(() => {
+            setCounter((prevCounter) => {
+                return prevCounter + 1
+            })
+        }, 500);
+        setTimeout(() => button.click(), 600);
+    }
+
+    return (
+        <div className={"new-demo"}>
+            <div className="counter">
+                <h3>
+                    不需要点击增加2这个按钮，这个按钮是交给js去模拟点击用的，模拟点击之后产生的是高优先级任务。
+                </h3>
+                <p>点击开始按钮开始模拟高优先级任务插队</p>
+                <button ref={buttonRef} onClick={handleButtonClick}>增加2</button>
+                <button onClick={onBeginTask} style={{ marginLeft: 16 }}>开始</button>
+                <div>
+                    {Array.from(new Array(40000)).map((v, index) =>
+                        <div key={index}>{counter}</div>
+                    )}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+class HighestPriority2 extends Component {
     constructor(props) {
         super(props)
         this.buttonRef = createRef();

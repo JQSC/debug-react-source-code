@@ -4,7 +4,7 @@
     display: flex;
 }
 .new-demo .counter {
-    width: 500px;
+    /* width: 500px; */
     padding-top: 50px;
     height: 600px;
     overflow: auto;

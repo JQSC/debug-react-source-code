@@ -677,7 +677,6 @@ function ensureRootIsScheduled(root: FiberRoot, currentTime: number) {
   // Check if any lanes are being starved by other work. If so, mark them as
   // expired so we know to work on those next.
   markStarvedLanesAsExpired(root, currentTime);
-
   // Determine the next lanes to work on, and their priority.
   const nextLanes = getNextLanes(
     root,

@@ -1664,13 +1664,7 @@ function renderRootConcurrent(root: FiberRoot, lanes: Lanes) {
 /** @noinline */
 function workLoopConcurrent() {
   // Perform work until Scheduler asks us to yield
-  let isYield=shouldYield();
-  if(isYield){
-      let a=1
-  }else{
-      let a=1
-  }
-  while (workInProgress !== null && !isYield) {
+  while (workInProgress !== null && !shouldYield()) {
     performUnitOfWork(workInProgress);
   }
 }

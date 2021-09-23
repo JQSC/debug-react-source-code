@@ -281,7 +281,7 @@ function unstable_wrapCallback(callback) {
 
 function unstable_scheduleCallback(priorityLevel, callback, options) {
   var currentTime = getCurrentTime();
-
+  //调度的开始时间为当前时间
   var startTime;
   if (typeof options === 'object' && options !== null) {
     var delay = options.delay;

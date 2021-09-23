@@ -519,7 +519,7 @@ export function requestUpdateLane(fiber: Fiber): Lane {
     // 根据优先级和已有的lane去计算新的lane
     lane = findUpdateLane(schedulerLanePriority, currentEventWipLanes);
   }
-  console.log('lane',lane);
+  //console.log('lane',lane);
   return lane;
 }
 
@@ -1664,7 +1664,13 @@ function renderRootConcurrent(root: FiberRoot, lanes: Lanes) {
 /** @noinline */
 function workLoopConcurrent() {
   // Perform work until Scheduler asks us to yield
-  while (workInProgress !== null && !shouldYield()) {
+  let isYield=shouldYield();
+  if(isYield){
+      let a=1
+  }else{
+      let a=1
+  }
+  while (workInProgress !== null && !isYield) {
     performUnitOfWork(workInProgress);
   }
 }

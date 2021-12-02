@@ -447,7 +447,7 @@ export function processUpdateQueue<State>(
       }
     }
   }
-
+  console.log('workInProgress',workInProgress)
   // These values may change as we process the queue.
   if (firstBaseUpdate !== null) {
     // Iterate through the list of updates to compute the result.

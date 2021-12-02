@@ -609,6 +609,7 @@ export function scheduleUpdateOnFiber(
     } else {
       ensureRootIsScheduled(root, eventTime);
       schedulePendingInteractions(root, lane);
+      //如果执行上下文为空则取消调度，主动刷新回调队列
       if (executionContext === NoContext) {
         // Flush the synchronous work now, unless we're already working or inside
         // a batch. This is intentionally inside scheduleUpdateOnFiber instead of
@@ -767,6 +768,7 @@ function ensureRootIsScheduled(root: FiberRoot, currentTime: number) {
 
 // This is the entry point for every concurrent task, i.e. anything that
 // goes through Scheduler.
+//current模式任务入口
 function performConcurrentWorkOnRoot(root) {
   // Since we know we're in a React event, we can clear the current
   // event time. The next update will compute a new event time.
@@ -798,6 +800,10 @@ function performConcurrentWorkOnRoot(root) {
 
   // Determine the next expiration time to work on, using the fields stored
   // on the root.
+  //获取本次render全局渲染优先级
+  /*
+  针对fiber对象或update对象, 只要它们的优先级(如: fiber.lanes和update.lane)比渲染优先级低, 都将会被忽略
+  */
   let lanes = getNextLanes(
     root,
     root === workInProgressRoot ? workInProgressRootRenderLanes : NoLanes,

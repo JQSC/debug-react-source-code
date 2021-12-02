@@ -519,7 +519,7 @@ export function requestUpdateLane(fiber: Fiber): Lane {
     // 根据优先级和已有的lane去计算新的lane
     lane = findUpdateLane(schedulerLanePriority, currentEventWipLanes);
   }
-  console.log('lane',lane);
+  //console.log('lane',lane);
   return lane;
 }
 

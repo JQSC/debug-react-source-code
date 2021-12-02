@@ -1660,6 +1660,8 @@ function dispatchAction<S, A>(
     const eventTime = requestEventTime();
     const lane = requestUpdateLane(fiber);
 
+    //console.log('lane:', lane, 'eventTime:', eventTime,'state：', action(queue.lastRenderedState));
+
     const update: Update<S, A> = {
         lane,
         action,

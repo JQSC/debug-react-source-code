@@ -6,7 +6,7 @@
  *
  * @flow
  */
-
+ import { createElement } from './src/React';
 // Keep in sync with https://github.com/facebook/flow/blob/master/lib/react.js
 export type StatelessFunctionalComponent<
     P,
@@ -85,7 +85,5 @@ export {
     unstable_Scope,
     unstable_useOpaqueIdentifier,
 } from './src/React';
-
-import { createElement } from './src/React';
 
 export default { createElement }

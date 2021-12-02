@@ -25,7 +25,7 @@ function HighestPriority(props) {
                 return prevCounter + 1
             })
         }, 500);
-        setTimeout(() => button.click(), 600);
+        // setTimeout(() => button.click(), 600);
     }
 
     return (

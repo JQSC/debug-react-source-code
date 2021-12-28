@@ -6,7 +6,10 @@ function FnComp() {
 
     const add = () => {
         let nums = btnState + 1;
-        setBtnState(nums)
+        setBtnState(() => {
+            console.log('执行setState回调!')
+            return nums
+        })
     }
 
     return (

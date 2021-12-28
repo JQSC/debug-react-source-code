@@ -1656,7 +1656,7 @@ function dispatchAction<S, A>(
             );
         }
     }
-
+    console.log('dispatchAction')
     const eventTime = requestEventTime();
     const lane = requestUpdateLane(fiber);
 

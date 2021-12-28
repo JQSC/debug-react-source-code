@@ -280,6 +280,7 @@ function unstable_wrapCallback(callback) {
 }
 
 function unstable_scheduleCallback(priorityLevel, callback, options) {
+console.log('调度中')
   var currentTime = getCurrentTime();
   //调度的开始时间为当前时间
   var startTime;
@@ -327,7 +328,7 @@ function unstable_scheduleCallback(priorityLevel, callback, options) {
   if (enableProfiling) {
     newTask.isQueued = false;
   }
-
+  
   if (startTime > currentTime) {
     // This is a delayed task.
     newTask.sortIndex = startTime;

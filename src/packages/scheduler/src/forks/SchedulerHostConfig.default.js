@@ -223,6 +223,7 @@ if (
     channel.port1.onmessage = performWorkUntilDeadline;
 
     requestHostCallback = function (callback) {
+        console.log('执行任务调度中的任务!')
         scheduledHostCallback = callback;
         if (!isMessageLoopRunning) {
             isMessageLoopRunning = true;
